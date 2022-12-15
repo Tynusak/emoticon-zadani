@@ -4,7 +4,7 @@ import { useSettings } from '../../setting-context';
 import { eyesData, mouthData, colorsData } from '../../data';
 
 const Emoticon = () => {
-  const settings = useSettings();
+  const { settings } = useSettings();
 
   return (
     <div

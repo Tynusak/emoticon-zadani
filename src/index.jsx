@@ -7,13 +7,24 @@ import { SettingContext } from './setting-context.js';
 
 const App = () => {
   const [settings, setSettings] = useState({
-    eyes: 2,
-    mouth: 3,
-    color: 6,
+    eyes: 1,
+    mouth: 2,
+    color: 3,
   });
+  const changeEyes = (eyesID) => {
+    setSettings({ ...settings, eyes: eyesID });
+  };
+  const changeMouth = (mouthID) => {
+    setSettings({ ...settings, mouth: mouthID });
+  };
+  const changeColor = (colorID) => {
+    setSettings({ ...settings, color: colorID });
+  };
 
   return (
-    <SettingContext.Provider value={settings}>
+    <SettingContext.Provider
+      value={{ settings, changeEyes, changeMouth, changeColor }}
+    >
       <div className="container">
         <header>
           <h1>Vytvoř si vlastní emotikon</h1>
